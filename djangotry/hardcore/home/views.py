@@ -18,7 +18,7 @@ def joinuss(request):
         joined = joinus(name=name, username=username, user_id=user_id, skills=skills, date = datetime.today())
         joined.save()
         server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-        server.login("hchardcorecommunity@gmail.com", "divyam123")
+        server.login("hchardcorecommunity@gmail.com", password)
         server.sendmail("hchardcorecommunity@gmail.com", name,  "Hey, \n \n  Thanks for applying for HardCore Community. \n You will get a reply soon about your selection. \n \n Thanks! \n Team HardCore")
         server.sendmail("hchardcorecommunity@gmail.com", "hchardcoreowner@gmail.com", skills + user_id + name  + username )
         server.quit()
